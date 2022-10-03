@@ -7,7 +7,7 @@
 || Authors:         Hiram Ochoa Sáenz					||
 || # de Control:	19060760							||
 || Updated:         02/10/2022							||
-|| Version:         2.0									||
+|| Version:         2.1									||
 ||------------------------------------------------------*/
 
 #include "lab_3.hpp"
@@ -36,9 +36,9 @@ unsigned int ADC::conv()
 	//Conversion del ADC
 	vout = (vin*pow(2,res)-1)/3.3;
 	// Salida Digital = [vin*(2^(res)) – 1] / ViFS
-	// res 	= Es el número de bits que tiene el Convertidor Analógico Digital
+	// res 	= Es el número de Bits que tiene el Convertidor Analógico Digital
 	// vin	= Voltaje Entrada
-	// ViFS = Voltaje que hay que poner a la entrada del convertidor ADC para
-	// 		  obtener una conversión máxima (todas las salidas serán iguales a “1”)
+	// ViFS = Voltaje a la entrada del convertidor ADC para obtener una
+	// 		  conversión máxima (Todas las salidas serán iguales a “1”)
 	return vout;
 }

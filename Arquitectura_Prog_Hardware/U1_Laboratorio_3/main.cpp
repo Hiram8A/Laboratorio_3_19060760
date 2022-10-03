@@ -8,7 +8,7 @@
 || Authors:         Hiram Ochoa Sáenz					||
 || # de Control:	19060760							||
 || Updated:         02/10/2022							||
-|| Version:         2.0									||
+|| Version:         2.1									||
 ||------------------------------------------------------*/
 
 #include "lab_3.hpp"
@@ -32,39 +32,20 @@ int main()
 	printf("|                   Convertidor ADC                               |\n");
 	printf("|-----------------------------------------------------------------|\n");
 	
-	do 												//Validacion de Datos # Canales [AN1-AN32]
+	do 												//Validación de Datos # Canales [AN1-AN32]
 	{
-		    cout<<"Introduce el Número de Canales a Utilizar: ";
-		    cin>>cant;
-		    num=cant;
-		    cout<<endl;
-		    cleanbuffin();
-			//short num =scanf("%d",&cant);
-		    
-		    if(!(num>=1 && num<32))
-		    	cout<<" Error, Introduzca el # de Canales [1-32] "<<"\n"<<endl;
-		    /*}
-		    if(num==1 && (cant<1 || cant>32)){
-		      	cout<<" Error, Introduzca el # de canales [1-32]: "<<"\n"<<endl;
-			}*/
+	    cout<<"Introduce el Número de Canales a Utilizar: ";
+	    cin>>cant;
+	    num=cant;
+	    cout<<endl;
+	    cleanbuffin();
+	    
+	    if(!(num>=1 && num<32))
+	    	cout<<" Error, Introduzca el # de Canales [1-32] "<<"\n"<<endl;
 			
 	}while(cant<1 || cant>32);
-	   
-	/* Otra Forma de Validacion de Datos # Canales [AN1-AN32]
-	cout<<"Introduce el numero de canales que deseas utilizar: ";
-	cin>>cant;
-	cout<<"\n"<<endl;
-	cleanbuffin();
-	
-	if((cant>=1 && cant<=32)){}
-	
-	else{
-		cout<<"Error, el # Canales es incorrecto"<<endl;
-		getchar();
-		return 1;	
-	}*/
-	
-	do												//Validacion de datos
+	   	
+	do												//Validación de Datos Resolución
 	{
 		cout<<"Introduce la Resolución [8, 10, 12 (Bits)]:  ";
 		cin>>bits;
@@ -83,7 +64,7 @@ int main()
 	
 	ADC::resol(bits);
 	ADC::frecu(frequence);
-	ADC canales [cant];								//Creación de objetos según los canales a usar
+	ADC canales [cant];								//Creación de Objetos Según los Canales a Usar
 	
 	for(i=0;i<cant;i++)
 	{
@@ -91,7 +72,7 @@ int main()
 		cleanbuffin();
 							
 							
-		do											//Validacion de Datos
+		do											//Validación de Datos
 		{
 			cin>>voltage;							//Lectura del Voltaje de cada Canal
 			cout<<"\n"<<endl;
