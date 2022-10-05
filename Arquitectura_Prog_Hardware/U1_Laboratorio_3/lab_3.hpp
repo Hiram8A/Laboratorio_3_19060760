@@ -1,14 +1,14 @@
 /*------------------------------------------------------||
-|| FileName:        lab_3.cpp							||
+|| FileName:        lab_3.hpp							||
 || Program version: Dev-C++ 5.11						||
-|| School:         TECNM - Campus Chihuahua 			||
+|| School:         	TECNM - Campus Chihuahua 			||
 || Description:     Encabezado de Declaración de		|| 
 ||					Clase y Creación Objetos ADC		||
 ||														||
 || Authors:         Hiram Ochoa Sáenz					||
 || # de Control:	19060760							||
 || Updated:         02/10/2022							||
-|| Version:         2.1									||
+|| Version:         3.0									||
 ||------------------------------------------------------*/
 
 #pragma once
@@ -16,25 +16,34 @@
 #include <locale.h>						// Teclado Local
 #include <cmath>						//	Biblioteca de Operaciones Matemáticas Básicas
 
+//using namespace std;
+
 class ADC
 {
 	private:
 		static unsigned int res;		// Resolución 8 10 12
-		static  float hertz;			// Frecuencia de Muestreo
+		float hertz;					// Frecuencia de Muestreo
 		float vin;						// Voltaje de Entrada a Vonvertir [0V - 3.3V]
 		unsigned int vout;				// Salida Digital en Bits (Según la Resolución)
+		short int nam;
 	
 	public:
-		Channel();						//Constructor por Defecto
+		Channel(){};					//Constructor por Defecto
+		
 	/*--------------------------------------------------------------|
 	|								Setters 						|
 	|--------------------------------------------------------------*/
+		void setnam(short int);
 		void capture (float);
 		static void resol (int);
-		static void frecu(float);
+		//static void frecu(float);
+		
+		virtual void setf(float);
+
 	/*--------------------------------------------------------------|
 	|								Getters 						|
 	|--------------------------------------------------------------*/		
-		static float getf();
+		float getf();
+		short int getnam();
 		unsigned int conv();
 };
