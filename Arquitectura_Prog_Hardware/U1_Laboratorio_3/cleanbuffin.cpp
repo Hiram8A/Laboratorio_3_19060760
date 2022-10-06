@@ -8,7 +8,7 @@
 || Authors:         Hiram Ochoa Sáenz					||
 || # de Control:	19060760							||
 || Updated:         02/10/2022							||
-|| Version:         3.0									||
+|| Version:         3.1									||
 ||------------------------------------------------------*/
 
 #include "lab_3.hpp"

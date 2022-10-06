@@ -7,18 +7,17 @@
 || Authors:         Hiram Ochoa Sáenz					||
 || # de Control:	19060760							||
 || Updated:         02/10/2022							||
-|| Version:         3.0									||
+|| Version:         3.1									||
 ||------------------------------------------------------*/
 
 #include "lab_3.hpp"
-
-using namespace std;
+#include <iostream>
+#include <cmath>
 
 /*--------------------------------------------------------------|
 |					Init Var Static - Clase ADC					|
 |--------------------------------------------------------------*/
 unsigned int ADC::res = 0;
-//float ADC::hertz = 0;
 
 /*--------------------------------------------------------------|
 |						Métodos Clase ADC 						|
@@ -32,10 +31,6 @@ void ADC::capture(float _v) {vin = _v;}
 
 float ADC:: getf () {return hertz;}
 
-void ADC::setnam(short _nam) {nam = _nam;}
-
-short ADC::getnam() {return nam;}
-
 unsigned int ADC::conv()
 {	
 	//Conversion del ADC
@@ -47,3 +42,7 @@ unsigned int ADC::conv()
 	// ViFS = Voltaje a la entrada del convertidor ADC para obtener una
 	// 		  conversión máxima (Todas las salidas serán iguales a “1”)
 }
+
+void ADC::setnam(short _nam) {nam = _nam;}
+
+short ADC::getnam() {return nam;}

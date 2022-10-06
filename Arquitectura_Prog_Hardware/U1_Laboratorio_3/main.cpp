@@ -8,8 +8,8 @@
 ||														||
 || Authors:         Hiram Ochoa Sáenz					||
 || # de Control:	19060760							||
-|| Updated:         02/10/2022							||
-|| Version:        	3.0									||
+|| Updated:         05/10/2022							||
+|| Version:        	3.1									||
 ||------------------------------------------------------*/
 
 #include "lab_3.hpp"
@@ -77,9 +77,9 @@ int main()
 		
 	}while(!(bits == 8||bits == 10||bits == 12));
 
-
-	// Selección Calculo de Frecuencia de Muestreo 
+	ADC::resol(bits); 								// Resolución de los ADC
 	
+	// Selección del Tipo de Cálculo de Frecuencia de Muestreo 
 	switch(opc){
 	
 	case '1':{
@@ -87,7 +87,7 @@ int main()
 		ADC_FS chann[cant];						// Se Crea Arreglo Objetos ADC_FS (Frec. Muestreo Manual Calculada)
 		cout<<"Introduce Factor ACK de la Frecuencia de Muestreo [2,4,8,16,32,64]: ";
 		
-			do
+			do									//Validación de Datos Factor ACK
 			{
 				cin>>frequence;
 				cout<<endl;
@@ -102,12 +102,12 @@ int main()
 		{
 			do
 			{
-				cout<<"Introduce el # Canal a Usar [1-32]: ";
+				cout<<"Introduce el # Canal a Usar [1-32]: ";		//Elección de los canales a usar
 			    cin>>num_chann;
 			    chann[i].setnam(num_chann);
 			    cout<<"\n"<<endl;
 			    
-			    if(!(num_chann>=1 || num_chann<32 ))
+			    if(!(num_chann>=1 || num_chann<32 ))				//Validación de Elección de Canal (1-32)
 				cout<<"Canal Inexistente"<<endl;
 					
 			}while(num_chann<1 || num_chann>32 );
@@ -115,8 +115,8 @@ int main()
 		
 		for(i=0;i<cant;i++)
 		{
-			chann[i].setf(frequence);
-			cout<<"Introduce el Valor a Leer del Canal [Orden respecto a la captura] "<<i+1<<": ";
+			chann[i].setf(frequence);					// Método Polimorfico
+			cout<<"Introduce el Valor a Leer del Canal [Orden respecto a la captura] "<<i+1<<": "; 
 			cleanbuffin();
 			
 			do											//Validación de Datos
@@ -124,7 +124,7 @@ int main()
 				cin>>voltage;							//Lectura del Voltaje de cada Canal
 				cout<<"\n"<<endl;
 				
-				if(voltage>3.3)							// Condición de Finalización 
+				if(voltage>3.3)							// Error
 				cout<<"Voltaje mayor a 3.3, vuelva a Intentarlo"<<"\n"<<endl;	
 			}
 			
@@ -147,7 +147,7 @@ int main()
 		{
 			cout<<"\n"<<"El Valor Digital del Canal AN"<<chann[i].getnam();
 			cout<<" [Frec. Muestreo = "<<chann[i].getf();
-			cout<<" MHz]"<<": "<<chann[i].conv()<<"\n"<<endl;
+			cout<<" MHz]: "<<chann[i].conv()<<"\n"<<endl;
 		}
 		
 		printf("|-----------------------------------------------------------------|\n");
@@ -161,7 +161,7 @@ int main()
 	case '2':{
 	
 		ADC_FSPEC channspec[cant]; // Se Crea Arreglo Objetos ADC_FSPEC (Frecuencia Especificada)
-		cout<<"Introduce la Frecuencia de Muestreo [Hz]:  ";
+		cout<<"Introduce la Frecuencia de Muestreo [MHz]:  ";
 		cin>>frequence;
 		cout<<"\n"<<endl;
 		
@@ -170,12 +170,12 @@ int main()
 		{
 			do
 			{
-				cout<<"Introduce el # Canal a Usar [1-32]: ";
+				cout<<"Introduce el # Canal a Usar [1-32]: ";	//Elección de los canales a usar
 			    cin>>num_chann;
 			    channspec[i].setnam(num_chann);
 			    cout<<"\n"<<endl;
 			    
-			    if(!(num_chann>=1 || num_chann<32 ))
+			    if(!(num_chann>=1 || num_chann<32 ))			//Validación de Elección de Canal (1-32)
 				cout<<"Canal Inexistente"<<endl;
 					
 			}while(num_chann<1 || num_chann>32 );
@@ -183,7 +183,7 @@ int main()
 	
 	for(i=0;i<cant;i++)
 	{
-		channspec[i].setf(frequence);
+		channspec[i].setf(frequence);							// Método Polimorfico
 		cout<<"Introduce el Valor a Leer del Canal [Orden respecto a la captura] "<<i+1<<": ";
 		cleanbuffin();
 										
@@ -192,7 +192,7 @@ int main()
 			cin>>voltage;							//Lectura del Voltaje de cada Canal
 			cout<<"\n"<<endl;
 			
-			if(voltage>3.3)							// Condición de Finalización 
+			if(voltage>3.3)							// Error
 			cout<<"Voltaje mayor a 3.3, vuelva a Intentarlo"<<"\n"<<endl;	
 		}
 		
@@ -215,9 +215,9 @@ int main()
 	{
 		cout<<"\n"<<"El Valor Digital del Canal AN"<<channspec[i].getnam();
 		cout<<" [Frec. Muestreo = "<<channspec[i].getf();
-		cout<<" MHz]"<<": "<<channspec[i].conv()<<"\n"<<endl;
+		cout<<"MHz]: "<<channspec[i].conv()<<"\n"<<endl;
 	}
-	
+
 	printf("|-----------------------------------------------------------------|\n");
 	printf("|             Presione cualquier tecla para salir                 |\n");
 	printf("|-----------------------------------------------------------------|\n");

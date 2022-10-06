@@ -8,7 +8,7 @@
 || Authors:         Hiram Ochoa Sáenz					||
 || # de Control:	19060760							||
 || Updated:         02/10/2022							||
-|| Version:         3.0									||
+|| Version:         3.1									||
 ||------------------------------------------------------*/
 
 #pragma once
@@ -22,9 +22,9 @@ class ADC
 {
 	private:
 		static unsigned int res;		// Resolución 8 10 12
-		float hertz;					// Frecuencia de Muestreo
 		float vin;						// Voltaje de Entrada a Vonvertir [0V - 3.3V]
 		unsigned int vout;				// Salida Digital en Bits (Según la Resolución)
+		float hertz;					// Frecuencia de Muestreo
 		short int nam;
 	
 	public:
@@ -44,6 +44,6 @@ class ADC
 	|								Getters 						|
 	|--------------------------------------------------------------*/		
 		float getf();
-		short int getnam();
 		unsigned int conv();
+		short int getnam();
 };

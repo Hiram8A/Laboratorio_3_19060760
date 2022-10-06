@@ -7,8 +7,8 @@
 ||														||
 || Authors:         Hiram Ochoa Sáenz					||
 || # de Control:	19060760							||
-|| Updated:         02/10/2022							||
-|| Version:         3.0									||
+|| Updated:         03/10/2022							||
+|| Version:         3.1									||
 ||------------------------------------------------------*/
 
 #include "lab_3.hpp"
@@ -23,7 +23,8 @@
 		printf("|                                                                 |\n");
 		printf("|         Arquitectura de Programación para Control de Hardware   |\n");
 		printf("|                                                                 |\n");
-		printf("|                  Laboratorio 3 -  Configuración ADC             |\n");
+		printf("|                  Laboratorio 3B -  Configuración ADC            |\n");
+		printf("|                        Herencia & Polimorfismo                  |\n");
 		printf("|                                                                 |\n");
 		printf("|                      Alumno: Hiram Ochoa Sáenz                  |\n");
 		printf("|                                                                 |\n");
