@@ -10,7 +10,7 @@
 #                                                           |
 #           Laboratorio 3 -  Configuración ADC              |
 #                                                           |
-#                       Versión   1.0                       |
+#                       Versión   2.1                       |
 #                       ( Proyecto A )                      |
 #                                                           |
 #-----------------------------------------------------------|
