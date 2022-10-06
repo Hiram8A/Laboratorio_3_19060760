@@ -2,10 +2,10 @@
 || FileName:        lab_3.cpp							||
 || Program version: Dev-C++ 5.11						||
 || School:         TECNM - Campus Chihuahua 			||
-|| Description:     Encabezado de Declaraci髇 de		|| 
-||					Clase y Creaci髇 Objetos ADC		||
+|| Description:     Encabezado de Declaraci贸n de		|| 
+||					Clase y Creaci贸n Objetos ADC		||
 ||														||
-|| Authors:         Hiram Ochoa S醗nz					||
+|| Authors:         Hiram Ochoa S谩enz					||
 || # de Control:	19060760							||
 || Updated:         02/10/2022							||
 || Version:         2.1									||
@@ -14,18 +14,18 @@
 #pragma once
 #include <iostream>						// Biblioteca Operaciones de Entrada/Salida
 #include <locale.h>						// Teclado Local
-#include <cmath>						//	Biblioteca de Operaciones Matem醫icas B醩icas
+#include <cmath>						//	Biblioteca de Operaciones Matem谩ticas B谩sicas
 
 class ADC
 {
 	private:
-		static unsigned int res;		// Resoluci髇 8 10 12
+		static unsigned int res;		// Resoluci贸n 8 10 12
 		static  float hertz;			// Frecuencia de Muestreo
 		float vin;						// Voltaje de Entrada a Vonvertir [0V - 3.3V]
-		unsigned int vout;				// Salida Digital en Bits (Seg鷑 la Resoluci髇)
+		unsigned int vout;				// Salida Digital en Bits (Seg煤n la Resoluci贸n)
 	
 	public:
-		Channel();						//Constructor por Defecto
+		Channel(){};						//Constructor por Defecto
 	/*--------------------------------------------------------------|
 	|								Setters 						|
 	|--------------------------------------------------------------*/
