@@ -9,8 +9,9 @@
 #-----------------------------------------------------------|
 #                                                           |
 #           Laboratorio 3 -  Configuración ADC              |
+#                   Herencia & Polimorfismo                 |
 #                                                           |
-#                       Versión   1.0                       |
-#                       ( Proyecto A )                      |
+#                       Versión   3.1                       |
+#                       ( Proyecto B )                      |
 #                                                           |
 #-----------------------------------------------------------|
